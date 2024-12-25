@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أبي العزيز</title>
+    
+    <!-- إضافة الرمز المفضل 2.png -->
+    <link rel="icon" href="2.png" type="image/png">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e8f4fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #b3e0ff;
+            padding: 20px;
+            position: relative;
+        }
+        header img {
+            height: 100px;
+        }
+        header h1 {
+            margin: 10px;
+            color: #005073;
+        }
+        nav {
+            margin: 20px;
+        }
+        nav button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #66b3ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        nav button:hover {
+            background-color: #3399ff;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #cceeff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+            color: #005073;
+        }
+        .heart {
+            animation: float 2s infinite;
+            position: absolute;
+            color: #3399ff;
+            font-size: 50px;
+            z-index: 1;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>أبي العزيز</h1>
+    </header>
+    <nav>
+        <button onclick="showSection('message')">رسالة للأب</button>
+        <button onclick="showSection('poetry')">شعر للأب</button>
+        <button onclick="showSection('advice')">كيف تكون أبًا صالحًا</button>
+        <button onclick="showSection('gratitude')">شكراً يا أبي</button>
+        <button onclick="showSection('fun_facts')">حقائق جميلة عن الأب</button>
+        <button onclick="showSection('good_children')">كيف نكون أولاد صالحين</button>
+        <button onclick="showSection('extra_tips')">نصائح إضافية</button>
+    </nav>
+    <section id="content">
+        <h2>مرحبًا بك في موقع أبي العزيز</h2>
+        <p>هنا تجد كل ما يتعلق بالأب ودوره العظيم في حياتنا. اكتشف رسائل وشعرًا ونصائح تعزز علاقتك بأبيك.</p>
+    </section>
+    <footer>
+        <p>© 2024 أبي العزيز - جميع الحقوق محفوظة</p>
+    </footer>
+    <script>
+        function showSection(section) {
+            const content = document.getElementById('content');
+            if (section === 'message') {
+                content.innerHTML = `<h2>رسالة للأب</h2><p>أبي العزيز، أنت القدوة التي أتعلم منها، أنت الأمان الذي أشعر به. شكراً لكل شيء تقدمه لي بحب وتضحية.</p>`;
+            } else if (section === 'poetry') {
+                content.innerHTML = `
+                    <h2>شعر للأب</h2>
+                    <p>
+                        أبي يا شمعة الأمان<br>
+                        يا من أضاء دربي بحب وحنان<br>
+                        <br>
+                        مهما كتبت وقلتُ عنك<br>
+                        تبقى في قلبي أعظم إنسان<br>
+                    </p>
+                    <p>
+                        قيل في الأب:<br>
+                        "الأب هو السند الذي يرفعك حين تسقط، والظل الذي يحميك من حر الحياة."
+                    </p>
+                `;
+            } else if (section === 'advice') {
+                content.innerHTML = `
+                    <h2>كيف تكون أبًا صالحًا</h2>
+                    <ul>
+                        <li>كن قدوة حسنة لأبنائك في السلوك والأخلاق.</li>
+                        <li>استمع لأبنائك وكن صديقًا لهم.</li>
+                        <li>شارك في حياتهم اليومية واهتم بتفاصيلهم.</li>
+                        <li>قدم لهم الحب غير المشروط، لكن لا تتهاون في التربية.</li>
+                        <li>كن حازمًا ولكن عادلًا في قراراتك.</li>
+                    </ul>
+                `;
+            } else if (section === 'gratitude') {
+                content.innerHTML = `<h2>شكراً يا أبي</h2><p>شكرًا يا أبي على كل اللحظات الجميلة، وعلى دعمك لي دائمًا. أنت المثال الذي أطمح أن أكون عليه.</p>`;
+            } else if (section === 'fun_facts') {
+                content.innerHTML = `<h2>حقائق جميلة عن الأب</h2><p>الأب هو أول بطل في حياة أبنائه. قوته ليست في عضلاته فقط، بل في حبه وتضحياته.</p>`;
+            } else if (section === 'good_children') {
+                content.innerHTML = `
+                    <h2>كيف نكون أولاد صالحين</h2>
+                    <ul>
+                        <li>احترم والدك واستمع لنصائحه.</li>
+                        <li>أظهر حبك وامتنانك له دائمًا.</li>
+                        <li>كن عونًا له في أوقات الشدة.</li>
+                        <li>اجتهد في حياتك لتكون مصدر فخر له.</li>
+                        <li>تذكر دائمًا أن تعب والديك هو من أوصلك لما أنت عليه الآن.</li>
+                    </ul>
+                `;
+            } else if (section === 'extra_tips') {
+                content.innerHTML = `
+                    <h2>نصائح إضافية</h2>
+                    <ul>
+                        <li>خصص وقتًا لتجلس مع أبيك وتشاركه الحديث.</li>
+                        <li>أظهر احترامك له أمام الآخرين، فهذا يعكس مدى تقديرك له.</li>
+                        <li>لا تنسَ أن تقول له "أحبك" دائمًا، فالكلمات لها أثر كبير.</li>
+                        <li>قدم له المساعدة في أي عمل يحتاجه، حتى لو كان بسيطًا.</li>
+                        <li>ادعُ له بالصحة والعافية دائمًا.</li>
+                    </ul>
+                `;
+            }
+        }
+
+        // Generate floating hearts effect
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.textContent = '❤';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>

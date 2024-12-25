@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الشخصي</title>
+
+    <!-- إضافة الرمز المفضل -->
+    <link rel="icon" href="1.png" type="image/png">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* يمنع التمرير عند ظهور القلوب */
+            position: relative;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            position: relative;
+            z-index: 2; /* وضع الأزرار في الطبقة الأمامية */
+        }
+
+        button {
+            border: none;
+            color: white;
+            padding: 20px 40px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+            z-index: 2; /* الأزرار في الطبقة الأمامية */
+        }
+
+        #button1 {
+            background-color: #ff69b4; /* وردي */
+        }
+
+        #button2 {
+            background-color: #add8e6; /* أزرق فاتح */
+        }
+
+        button:hover {
+            transform: scale(1.1) translateY(0);
+        }
+
+        button:active {
+            transform: scale(1) translateY(5px);
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animation for buttons */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for hearts */
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: moveHearts 10s infinite;
+            z-index: 1; /* وضع القلوب في الطبقة الخلفية */
+        }
+
+        @keyframes moveHearts {
+            0% {
+                bottom: -50px;
+                opacity: 1;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                bottom: 100vh;
+                opacity: 0;
+                transform: scale(1.5);
+            }
+        }
+
+        .heart-blue {
+            color: #add8e6; /* أزرق فاتح */
+        }
+
+        .heart-pink {
+            color: #ff69b4; /* وردي */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button" id="button1" onclick="window.location.href='أمي_الحبيبة.html'">أمي الحبيبة</button>
+        <button class="button" id="button2" onclick="window.location.href='أبي_العزيز.html'">أبي العزيز</button>
+    </div>
+
+    <!-- قلوب تخرج من أسفل الصفحة -->
+    <div class="heart heart-blue">💙</div>
+    <div class="heart heart-pink">💖</div>
+
+    <script>
+        // Adding animation on page load
+        window.onload = function() {
+            document.getElementById('button1').classList.add('show');
+            document.getElementById('button2').classList.add('show');
+            
+            // إضافة المزيد من القلوب في أماكن عشوائية
+            for (let i = 0; i < 10; i++) {
+                let heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.classList.add(Math.random() > 0.5 ? 'heart-blue' : 'heart-pink');
+                heart.innerText = Math.random() > 0.5 ? '💙' : '💖';
+                heart.style.left = `${Math.random() * 100}%`; // عشوائي
+                heart.style.bottom = `${-50 + Math.random() * 50}px`; // عشوائي من أسفل الصفحة
+                heart.style.animationDelay = `${Math.random() * 5}s`; // تأخير عشوائي في بدء الأنيميشن
+                document.body.appendChild(heart);
+            }
+        };
+    </script>
+</body>
+</html>

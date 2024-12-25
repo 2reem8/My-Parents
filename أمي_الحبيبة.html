@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أمي الحبيبة</title>
+    <link rel="icon" href="3.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fbeff3;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #ffcccc;
+            padding: 20px;
+            position: relative;
+        }
+        header img {
+            height: 100px; /* يمكنك تعديل الحجم حسب الحاجة */
+        }
+        header h1 {
+            margin: 10px;
+            color: #7a3e48;
+        }
+        nav {
+            margin: 20px;
+        }
+        nav button {
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #ff9999;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        nav button:hover {
+            background-color: #ff6666;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #ffe6e6;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+            color: #7a3e48;
+        }
+        .heart {
+            animation: float 2s infinite;
+            position: absolute;
+            color: #ff8080;
+            font-size: 50px;
+            z-index: 1;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>أمي الحبيبة</h1>
+    </header>
+    <nav>
+        <button onclick="showSection('message')">رسالة للأم</button>
+        <button onclick="showSection('poetry')">شعر للأم</button>
+        <button onclick="showSection('advice')">كيف تكوني أم صالحة</button>
+        <button onclick="showSection('gratitude')">شكراً يا أمي</button>
+        <button onclick="showSection('fun_facts')">حقائق جميلة عن الأم</button>
+        <button onclick="showSection('mother_roles')">دور الأم في حياتنا</button>
+        <button onclick="showSection('good_children')">كيف نكون أولاد صالحين</button>
+        <button onclick="showSection('extra_tips')">نصائح إضافية</button>
+    </nav>
+    <section id="content">
+        <h2>مرحبًا بك في موقع أمي الحبيبة</h2>
+        <p>هنا تجد كل ما يتعلق بالأم وفضلها. اكتشف جمال الأم من خلال رسائل، أشعار، ونصائح تعزز علاقتك بها.</p>
+    </section>
+    <footer>
+        <p>© 2024 أمي الحبيبة - جميع الحقوق محفوظة</p>
+    </footer>
+    <script>
+        function showSection(section) {
+            const content = document.getElementById('content');
+            if (section === 'message') {
+                content.innerHTML = `<h2>رسالة للأم</h2><p>أمي الغالية، أنتِ النور الذي يضيء حياتي، شكراً لكل شيء تقدمينه لي بحب وعطاء. أنتِ مصدر القوة والسعادة في حياتي.</p>`;
+            } else if (section === 'poetry') {
+                content.innerHTML = `
+                    <h2>شعر للأم</h2>
+                    <p>
+                        إذا ما جئتُ لأكتبَ حبًّا<br>
+                        فكل حروفي عاجزةٌ أن تُوفيكِ وصفًا<br>
+                        <br>
+                        أُمّي يا زهرة الحياة<br>
+                        أنتِ القلب الذي ينبض بالحنان<br>
+                        وأنتِ من ربتني على الإحسان<br>
+                    </p>
+                    <p>
+                        قيل في الأم:<br>
+                        "الأم هي الشمعة التي تُضيء عتمة الحياة، وهي البحر الذي لا ينضب."
+                    </p>
+                `;
+            } else if (section === 'advice') {
+                content.innerHTML = `
+                    <h2>كيف تكوني أم صالحة</h2>
+                    <ul>
+                        <li>كوني صبورة واستمعي لأطفالك مهما كانت مشاكلهم صغيرة.</li>
+                        <li>اجعلي الحوار جزءًا يوميًا من حياتكم.</li>
+                        <li>قدّمي لهم الحب والدعم دون شروط.</li>
+                        <li>كوني مرنة لكن حازمة عندما يتعلق الأمر بالقيم.</li>
+                        <li>اجعلي التوجيه والتعليم بالقدوة هو أسلوبك الرئيسي.</li>
+                    </ul>
+                `;
+            } else if (section === 'gratitude') {
+                content.innerHTML = `<h2>شكراً يا أمي</h2><p>شكرًا يا أمي على كل اللحظات الجميلة، وعلى دعمك لي دائمًا. أنتِ الجسر الذي أعبُر عليه إلى النجاح.</p>`;
+            } else if (section === 'fun_facts') {
+                content.innerHTML = `<h2>حقائق جميلة عن الأم</h2><p>الأم قادرة على سماع احتياجات طفلها حتى قبل أن ينطق بها. وقلب الأم ينبض بسرعة أكبر عند رؤيتها طفلها يبتسم.</p>`;
+            } else if (section === 'mother_roles') {
+                content.innerHTML = `<h2>دور الأم في حياتنا</h2><p>الأم هي المصدر الأول للحب والدعم. هي التي تزرع القيم وتُعلّمنا كيف نكون أقوياء. دورها لا يُقدر بثمن.</p>`;
+            } else if (section === 'good_children') {
+                content.innerHTML = `
+                    <h2>كيف نكون أولاد صالحين</h2>
+                    <ul>
+                        <li>احترم والديك وكن مطيعًا لهما.</li>
+                        <li>ساعدهما في الأعمال المنزلية مهما كانت بسيطة.</li>
+                        <li>أظهر حبك وامتنانك لهما بشكل دائم.</li>
+                        <li>استمع إلى نصائحهما وطبقها في حياتك.</li>
+                        <li>ادعُ لهما بالصحة والعافية دائمًا.</li>
+                    </ul>
+                `;
+            } else if (section === 'extra_tips') {
+                content.innerHTML = `
+                    <h2>نصائح إضافية</h2>
+                    <ul>
+                        <li>اجعل وقتًا خاصًا للأم يوميًا لتشاركها الحديث.</li>
+                        <li>ساعدها في إنجاز أي مهام صغيرة تحتاجها.</li>
+                        <li>قدم لها الهدايا البسيطة لتعبّر عن حبك.</li>
+                        <li>أظهر احترامك لها أمام الآخرين، فهذا يعكس مدى تقديرك.</li>
+                        <li>كن دائمًا شخصًا يعتمد عليه، فهذا يجعلها تشعر بالفخر.</li>
+                    </ul>
+                `;
+            }
+        }
+
+        // Generate floating hearts effect
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            heart.textContent = '❤';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
